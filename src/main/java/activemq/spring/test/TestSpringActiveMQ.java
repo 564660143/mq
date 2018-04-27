@@ -39,7 +39,9 @@ public class TestSpringActiveMQ {
 
   @Test
   public void testSendMessage() {
-    producer.sendMessage("测试发送消息：" + new Date());
+    for(int i=0 ; i<10; i++){
+      producer.sendMessage(destination, "测试发送消息：" + new Date());
+    }
   }
   
   @Test
